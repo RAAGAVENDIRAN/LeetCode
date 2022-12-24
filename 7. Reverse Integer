@@ -1,0 +1,53 @@
+JAVA:
+
+class Solution {
+    public int reverse(int x) {
+        long s=0,r;
+        
+             if(x>0){
+            while(x>0){
+                r=x%10;
+                x=x/10;
+                s=s*10+r;
+            }
+            
+        }
+        else{
+            x=-1*x;
+            while(x>0){
+                r=x%10;
+                x=x/10;
+                s=s*10+r;
+            }
+            s=s*-1;
+            
+        }
+        if(s>=Integer.MIN_VALUE && s<=Integer.MAX_VALUE){
+            return (int)s;
+        }
+        return 0;
+       
+    }
+}
+
+
+
+C:
+
+int reverse(int x){
+      long long reverse=0;  
+        
+        while(x!=0)
+        {
+            int temp = x%10;
+            reverse = reverse*10+temp;
+            if(reverse>=INT_MAX || reverse<=INT_MIN) 
+			{ 
+                return 0;
+            }
+            x/=10;
+        }
+        
+        int ans=reverse;
+        return ans;
+}
