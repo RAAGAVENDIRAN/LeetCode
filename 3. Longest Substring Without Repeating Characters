@@ -1,0 +1,25 @@
+PYTHON:
+
+class Solution:
+    def lengthOfLongestSubstring(self, a: str) -> int:
+        maxs=0
+        if len(a)==1:
+            return 1
+        else:
+            for i in range(len(a)):
+                lsd="false"
+                l=[]
+                for j in range(i,len(a)):
+                    if a[j] not in l:
+                        l.append(a[j])
+                    else:
+                        lsd="true"
+                        x=len(l)
+                        if maxs<x:
+                            maxs=x
+                        break
+                if lsd=="false":
+                    x=len(l)
+                    if maxs<x:
+                        maxs=x
+        return maxs
