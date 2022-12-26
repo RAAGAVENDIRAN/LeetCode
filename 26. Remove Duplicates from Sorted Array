@@ -1,0 +1,15 @@
+PYTHON :
+
+class Solution:
+    def removeDuplicates(self, l: List[int]) -> int:
+        i=0
+        n=len(l)
+        if n<=1:
+            return len(l)
+        while i<n-1:
+            if l[i]==l[i+1]:
+                l.remove(l[i])
+                n=n-1
+            else:
+                i=i+1
+        return len(l)
