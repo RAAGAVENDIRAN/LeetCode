@@ -1,0 +1,17 @@
+PYTHON:
+
+class Solution:
+    def searchRange(self, nums: List[int], target: int) -> List[int]:
+        l1=[-1,-1]
+        l2=[]
+        l3=[0,0]
+        if target not in nums:
+            return l1
+        elif len(nums)==1:
+            return l3
+        ind=nums.index(target)
+        k=nums[::-1]
+        ind2=k.index(target)
+        l2.append(ind)
+        l2.append(len(nums)-ind2-1)
+        return l2
