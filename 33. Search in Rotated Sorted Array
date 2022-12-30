@@ -1,0 +1,27 @@
+PYTHON :
+
+class Solution:
+    def search(self, nums: List[int], target: int) -> int:
+        if target not in nums:
+            return -1
+        else:
+            return nums.index(target)
+            
+ 
+
+C++:
+
+class Solution {
+public:
+    int search(vector<int>& v, int target) {
+        auto it = find(v.begin(),v.end(),target);
+            if(it!=v.end()){
+                int index=it-v.begin();
+                return index;}
+
+            
+            else
+                return -1;
+        
+    }
+};
