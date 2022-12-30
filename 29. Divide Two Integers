@@ -1,0 +1,11 @@
+PYTHON :
+
+class Solution:
+    def divide(self, n: int, m: int) -> int:
+        h=int(n/m)
+        if h>=-2147483648 and h<=2147483647:
+            return h
+        elif h<-2147483648:
+            return -2147483648
+        else:
+            return 2147483647
