@@ -1,0 +1,32 @@
+C:
+
+int trap(int* p, int h){
+    int max(int i,int j){
+        return i>j?i:j;
+    }
+    int min(int i,int j){
+        return i<j?i:j;
+    }
+    int lm[h];
+    int rm[h];
+    lm[0]=p[0];
+    rm[h-1]=p[h-1];
+    int water=0;
+    for(int i=1;i<h;i++){
+        lm[i]=max(lm[i-1],p[i]);
+    }
+
+    for(int i=h-2;i>=0;i--){
+        rm[i]=max(rm[i+1],p[i]);
+    }
+
+     for(int i=0;i<h;i++){
+        water+=min(lm[i],rm[i])-p[i];
+    }
+
+    return water;
+
+
+
+       
+}
